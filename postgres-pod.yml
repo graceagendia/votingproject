@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: Pod
+Metadata:
+  name: postgres-pod
+  labels:
+    author: grace
+    name: postgres-pod
+spec:
+  containers:
+    - name: postgres
+      image: postgres
+      env:
+        - name: POSTGRES_PASSWORD
+          value: grace
+        - name: POSTGRES_USER
+          value: myuser
+        - name: POSTGRESS_DB
+          value: mydb
+      ports:
+        - containerPort: 5432
+...
